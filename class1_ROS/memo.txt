@@ -36,3 +36,31 @@ rostopicなどを用い，プログラムを動かす中で何が起きてるか
 クオータニオンのｗには1を指定する
 宿題1,2,3，特に1,2について，自分でプログラムを書けるようにするといい．
 サポート：73Aまで
+
+
+
+注意
+
+$ roscore
+として
+ROS を使うのに必要な基本プログラムを立ち上げる．roscore と打ち込んだ時に
+Command 'roscore' not found, but can be installed with:
+sudo apt install python-roslaunch
+と表示される場合は、
+sudo apt install python-roslaunch をするのではなく，
+$ source /opt/ros/melodic/setup.bash 
+として ROS を利用するのに必要な重要な環境変数を設定してから roscore を立ち上げる．☆この手続きはターミナルを立ち上げるたびに実行する必要がある．
+
+それでもroscore: command not found
+が表示される場合は
+$ sudo apt-get update
+$ sudo apt-get install ros-melodic-desktop-full 
+としてインストールする．重要な環境変数には以下がある．
+ROS_PACKAGE_PATH : ROS のパッケージを検索するパスを設定する
+ROS_MASTER_URI : ROS のマスターを指定する．デフォルトは http://localhost:11311/ ．localhost の代わりに他の PC の IP アドレスにすると，その PC をマスターにする．
+ROS_IP/ROS_HOSTNAME : ROS ノードのネットワークアドレスを指定する．外部の PC と接続する場合はその PC から自分の PC を一意に指定できるようホスト名か IP を指定する．
+
+ターミナルを立ち上げるたびに source /opt/ros/melodic/setup.bash を実行するのが面倒な場合
+$ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+$ source ~/.bashrc
+として環境設定がシェル起動時に反映されるようにする．>> を> とすると必要な情報が全て消えてしまうので要注意．これらが意味するところは，man bash の中の，Redirecting Output とAppending Redirected Output の項に説明がある．
