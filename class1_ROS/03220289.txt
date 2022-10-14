@@ -22,9 +22,8 @@ ROSではサービスと呼ばれている．通常の関数呼び出しのよ�
 
 ・geometry_msgs/Twist, 
 メッセージ名．速度指令を送ることができる
-参考，やってみた後確認↓
 http://forestofazumino.web.fc2.com/turtlereal/turtlereal_control_software.html
 ・move_base_msgs/MoveBaseActionGoal,
-わからん（課題をこなしながら分かったら書くし，わからなかったらわからないと書く）
+ゴール位置の指令を送ることができる
 ・control_msgs/FollowJointTrajectoryActionGoal
-わからん（同じく）
+関節角度の指令を送ることができる

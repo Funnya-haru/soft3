@@ -50,6 +50,9 @@ sudo apt install python-roslaunch
 sudo apt install python-roslaunch をするのではなく，
 $ source /opt/ros/melodic/setup.bash 
 として ROS を利用するのに必要な重要な環境変数を設定してから roscore を立ち上げる．☆この手続きはターミナルを立ち上げるたびに実行する必要がある．
+(※俺が作ったパッケージを使う場合は，
+source ~/catrkin_ws/devel/setup.bash
+する必要がある)
 
 それでもroscore: command not found
 が表示される場合は
